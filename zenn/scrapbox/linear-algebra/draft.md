@@ -212,7 +212,8 @@ $s$を消去する.
 
 $$
 \begin{align*}
-  \mathbf{x'_0} &= \mathbf{x_0} - s\mathbf{b} \\
+  \mathbf{x'_0} = \mathbf{x_0} - s\mathbf{b}, \\
+\\
   (\mathbf{b, x'_0}) &= c \\
   (\mathbf{b}, \mathbf{x_0} - s\mathbf{b}) &= c \\
   (\mathbf{b, x_0}) - s(\mathbf{b, b}) &= c \\
@@ -328,3 +329,62 @@ $\mathbf{a}$を平面$(S)$の**法線ベクトル**と呼ぶ.
 
 - 二つの平面$(S), (S')$の法線ベクトル$\mathbf{a, a'}$が直行する時, その二つの平面$(S), (S')$は直行するという.
 - $\mathbf{a}$と$\mathbf{a'}$との交角を, $(S)$と$(S_0)$との交角という.
+
+:::details 例4
+点$P$から平面$(S)$へと下した垂線の足$P'$および$P$と平面$(S')$との最短距離$\overline{PP'}$を求める.
+
+![figure5](./assets/1-2-5.drawio.svg)
+
+$P, P'$のそれぞれの位置ベクトルを$\mathbf{x_0}, \mathbf{x'_0}$とする.
+
+平面$(S)$が方程式
+
+$$
+(S): (\mathbf{a, x}) = d
+$$
+
+で与えられているとき, 
+
+$$
+\mathbf{x_0} - \mathbf{x'_0} = t\mathbf{a}, \quad (\mathbf{a, x'_0}) = d
+$$
+
+$t$を消去する.
+
+$$
+\begin{align*}
+  \mathbf{x'_0} = \mathbf{x_0} - t\mathbf{a}, \\
+  \\
+  (\mathbf{a, x'_0}) &= d \\
+  (\mathbf{a}, \mathbf{x_0} - t\mathbf{a}) &= d \\
+  (\mathbf{a, x_0}) - t(\mathbf{a, a}) &= d \\
+  t &= \frac{(\mathbf{a, x_0}) - d}{(\mathbf{a, a})}
+\end{align*}
+$$
+
+より
+
+$$
+\mathbf{x'_0} = \mathbf{x_0} - \frac{(\mathbf{a, x_0}) - d}{(\mathbf{a, a})}\mathbf{a}
+$$
+
+したがって最短距離$\| \mathbf{x_0 - x'_0} \|$は
+
+$$
+\begin{align*}
+  \| \mathbf{x_0 - x'_0} \| &= \| \frac{(\mathbf{a, x_0}) - d}{(\mathbf{a, a})}\mathbf{a} \| \\
+  &= \frac{| (\mathbf{a, x_0}) - d|}{\| \mathbf{a} \|^2} \| \mathbf{a} \| \\
+  &= \frac{| (\mathbf{a, x_0}) - d|}{\| \mathbf{a} \|}
+\end{align*}
+$$
+
+で与えられる.
+
+:::
+
+:::details 例5
+直線$(l)$が平面$(S)$に垂直でなければ, 直線$(l)$を含んだ平面$(S)$と直行する平面がちょうど一つ存在する.
+
+![figure6](./assets/1-2-6.drawio.svg)
+
+:::
