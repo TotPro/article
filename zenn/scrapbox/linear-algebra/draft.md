@@ -11,13 +11,16 @@
 
 
 # 第1章
+
 ## 平面および空間のベクトル
+
 ### 線形独立
 - 2つのベクトル$\mathbf{a, b}$が平行でないとき, それらは**線形独立**である.
 - 3つのベクトル$\mathbf{a,b,c}$が同一平面上の矢印で表せないとき, それらは**線形独立**である.
   - $\mathbf{a}=\overrightarrow{(OP)}, \mathbf{b}=\overrightarrow{(OQ)}, \mathbf{c}=\overrightarrow{(OR)}$と表示したときに4点$O, P, Q, R$が同一平面上にないこと.
 - $\mathbf{a, b, c}$が線形独立$\iff x\mathbf{a}+y\mathbf{b}+z\mathbf{c}$ for $\{x,y,z\} \in \mathbb{Z}$と一意的に表せる.
   - $\mathbf{a,b,c}$の**線型結合**という.
+
 ### 内積
 2つのベクトルの交わる角を$\theta(0\le\theta\le\pi)$とする.
 
@@ -41,10 +44,14 @@ $$
 - $(\mathbf{a, b}) = (\mathbf{b, a})$
 
 ## 直線と平面
+
+### 平面上の直線とベクトル表示（助変数表示）
+
 ![figure1](./assets/1-2-1.drawio.svg)
+
 上の図があるとき, 任意の実数$t$に対して$\mathbf{x_1}+t\mathbf{a}$を位置ベクトルとする点は直線$(l)$上にある.
 つまり, 直線$(l)$上の任意の点$P$に対し、適当な実数$t$を取れば$\overrightarrow{(OP)}=\mathbf{x_1}+t\mathbf{a}$とかける.
-### ベクトル表示（助変数表示）
+
 $P$の位置ベクトルを$\mathbf{x}$とする.
 
 $$
@@ -92,7 +99,7 @@ $$
   (y_2 - y_1)x - (x_2 - x_1)y - x_1y_2 + x_1y_1 + y_1x_2 - y_1x_1 = 0
 $$
 
-### 法線ベクトル
+### 法線ベクトル 平面ver
 平面上の直線の方程式
 
 $$
@@ -102,7 +109,7 @@ $$
 $$
 
 を考える.
-$l$に平行で原点を通る直線$l_0$は
+$(l)$に平行で原点を通る直線$l_0$は
 
 $$
 \begin{equation}
@@ -119,9 +126,205 @@ $$
 \end{align*}
 $$
 
-$\mathbf{a}$が直線$l_0$と直交していることを表している→直線$l$とも直交する. 
-$\mathbf{a}$を$l$の**法線ベクトル**と呼ぶ.
+$\mathbf{a}$が直線$l_0$と直交していることを表している→直線$(l)$とも直交する. 
+$\mathbf{a}$を直線$(l)$の**法線ベクトル**と呼ぶ.
 ```txt:memo
 別に$l$は$mathbf{a}$と角を成しているわけでないので内積自体はnot zero という理解で良い？
 ```
 ![figure2](./assets/1-2-2.drawio.svg)
+
+:::details 例1
+平面上の点$P$から直線$(l)$へ下した垂線の足$P'$および$P$との最短距離$\overline{PP'}$を求める.
+
+![figure3](./assets/1-2-3.drawio.svg)
+
+$P, P'$それぞれの位置ベクトルを$\mathbf{x_0, x'_0}$とする. 
+
+直線$(l)$がベクトル表示
+
+$$
+(l): \mathbf{x} = \mathbf{x_1} + t\mathbf{a} \qquad (-\infty < t < \infty)
+$$
+
+で与えられている時, 
+
+$$
+\mathbf{x'_0} = \mathbf{x_1} + t\mathbf{a}, \quad (\mathbf{a, x_0 - x'_0}) = 0
+$$
+
+$t$を消去する.
+
+$$
+\begin{align*}
+    (\mathbf{a, x_0 - x'_0}) &= 0 \\
+    (\mathbf{a, x_0 - x_1 -}t\mathbf{a}) &= 0 \\
+    (\mathbf{a, x_0}) - (\mathbf{a, x_1}) - (\mathbf{a, }t\mathbf{a}) &= 0 \\
+    (\mathbf{a, x_0}) - (\mathbf{a, x_1}) - t(\mathbf{a, a}) &= 0 \\
+    t(\mathbf{a, a}) &= (\mathbf{a, x_0}) - (\mathbf{a, x_1}) \\
+    t(\mathbf{a, a}) &= (\mathbf{a, x_0 - x_1}) \\
+    t &= \frac{(\mathbf{a, x_0 - x_1})}{(\mathbf{a, a})}
+\end{align*}
+$$
+
+より
+
+$$
+\mathbf{x'_0} = \mathbf{x_1} + \frac{(\mathbf{a, x_0 - x_1})}{(\mathbf{a, a})}\mathbf{a}
+$$
+
+したがって, 最短距離$\| \mathbf{x_0 - x'_0} \|$は
+
+$$
+\begin{align*}
+  \| \mathbf{x_0 - x'_0} \| &= \| \mathbf{x_0} - \mathbf{x_1} - \frac{(\mathbf{a, x_0 - x_1})}{(\mathbf{a, a})}\mathbf{a} \| \\
+  \| \mathbf{x_0 - x'_0} \|^2 &= \| \mathbf{x_0} - \mathbf{x_1} - \frac{(\mathbf{a, x_0 - x_1})}{(\mathbf{a, a})}\mathbf{a} \|^2 \\
+\end{align*}
+$$
+
+ここで$\mathbf{X} = \mathbf{x_0} - \mathbf{x_1}$をとして
+
+$$
+\begin{align*}
+  \| \mathbf{x_0 - x'_0} \|^2 &= \| \mathbf{X} - \frac{(\mathbf{a, X})}{(\mathbf{a, a})}\mathbf{a} \|^2 \\
+  \| \mathbf{x_0 - x'_0} \|^2 &= \| \mathbf{X} \|^2 + \frac{(\mathbf{a, X})^2}{(\mathbf{a, a})^2}(\mathbf{a, a}) - 2 \frac{(\mathbf{a, X})}{(\mathbf{a, a})}(\mathbf{X, a}) \\
+  \| \mathbf{x_0 - x'_0} \|^2 &= \| \mathbf{X} \|^2 + \frac{(\mathbf{a, X})^2}{(\mathbf{a, a})} - 2 \frac{(\mathbf{a, X})^2}{(\mathbf{a, a})} \\
+  \| \mathbf{x_0 - x'_0} \|^2 &= \| \mathbf{x_0} - \mathbf{x_1} \|^2 - \frac{(\mathbf{a, x_0 - x_1})^2}{(\mathbf{a, a})} \\
+  \| \mathbf{x_0 - x'_0} \|^2 &= \frac{ \| \mathbf{a} \|^2 \| \mathbf{x_0} - \mathbf{x_1} \|^2 - (\mathbf{a, x_0 - x_1})^2}{ \| \mathbf{a} \|^2} \\
+  \| \mathbf{x_0 - x'_0} \| &= \frac{ \sqrt{\| \mathbf{a} \|^2 \| \mathbf{x_0} - \mathbf{x_1} \|^2 - (\mathbf{a, x_0 - x_1})^2}}{ \| \mathbf{a} \|} \\
+\end{align*}
+$$
+
+で与えられる.
+
+直線$(l)$が方程式
+
+$$
+(l): (\mathbf{b, x}) = c
+$$
+
+で与えられている時,
+
+$$
+\mathbf{x_0 - x'_0} = s\mathbf{b}, \quad (\mathbf{b, x'_0}) = c
+$$
+
+$s$を消去する.
+
+$$
+\begin{align*}
+  \mathbf{x'_0} &= \mathbf{x_0} - s\mathbf{b} \\
+  (\mathbf{b, x'_0}) &= c \\
+  (\mathbf{b}, \mathbf{x_0} - s\mathbf{b}) &= c \\
+  (\mathbf{b, x_0}) - s(\mathbf{b, b}) &= c \\
+  s &= \frac{(\mathbf{b, x_0}) - c}{(\mathbf{b, b})}
+\end{align*}
+$$
+
+より
+
+$$
+\mathbf{x'_0} = \mathbf{x_0} - \frac{(\mathbf{b, x_0}) - c}{(\mathbf{b, b})}\mathbf{b}
+$$
+
+したがって最短距離$\| \mathbf{x_0 - x'_0} \|$は
+
+$$
+\begin{align*}
+  \| \mathbf{x_0 - x'_0} \| &= \| \frac{(\mathbf{b, x_0}) - c}{(\mathbf{b, b})}\mathbf{b} \| \\
+  &= \frac{|( \mathbf{b, x_0}) - c |}{\| \mathbf{b} \|^2} \| \mathbf{b} \| \\
+  &= \frac{|( \mathbf{b, x_0}) - c |}{\| \mathbf{b} \|}
+\end{align*}
+$$
+
+で与えられる.
+
+:::
+
+空間内での直線も平面と同様にしてベクトル表示が行える.
+
+:::details 例2
+平面または空間内の二直線
+
+$$
+\begin{align*}
+  (l_1): \mathbf{x} = \mathbf{x_1} + t\mathbf{a} \\
+  (l_2): \mathbf{x} = \mathbf{x_2} + t\mathbf{b}
+\end{align*}
+$$
+
+の交角を$\theta(0 \le \theta \le \pi / 2)$とすれば
+
+$$
+\cos(\theta) = \frac{|(\mathbf{a, b})|}{\|\mathbf{a}\| \|\mathbf{b}\|}
+$$
+
+```memo
+直線の交角であってベクトルの交角ではないので絶対値がついていても良いのか. あと$\theta(0 \le \theta \le \pi / 2)$
+```
+:::
+
+:::details 例3
+位置ベクトル$\mathbf{x_0}$を持つ点$P$から$(l)$へ下した垂線の足$P'$の位置ベクトルが$\mathbf{x'_0}$で
+
+直線$(l)$がベクトル表示
+
+$$
+(l): \mathbf{x} = \mathbf{x_1} + t\mathbf{a}
+$$
+
+で与えられている時, 平面と全く同様に点$P$と直線$(l)$の最短距離は
+
+$$
+\| \mathbf{x_0 - x'_0} \| = \frac{ \sqrt{\| \mathbf{a} \|^2 \| \mathbf{x_0} - \mathbf{x_1} \|^2 - (\mathbf{a, x_0 - x_1})^2}}{ \| \mathbf{a} \|}
+$$
+
+で与えられる.
+:::
+
+### 空間内の平面のベクトル表示
+![figure4](./assets/1-2-4.drawio.svg)
+
+空間内の平面も一つの一次方程式で表されるが, ベクトル表示でも表すことができる.
+
+平面$(S)$上に一点$P_1$を取り, その位置ベクトルを$\mathbf{x_1}$とする. さらに平面$(S)$上に二つの線型独立なベクトル$\mathbf{a} = (\overrightarrow{P_1P_2})$と$\mathbf{b} = (\overrightarrow{P_1P_3})$を取る.
+
+任意の実数$t, s$に対して, ベクトル$t\mathbf{a}+s\mathbf{b}$は平面$(S)$上にあり, $\mathbf{x_1} + t\mathbf{a} + s\mathbf{b}$を位置ベクトルとする点$P$は平面$(S)$上にある. つまり, 平面$(S)$上の任意の点$P$に対し, 適当な実数$t, s$を取れば, 
+$(\overrightarrow{OP}) = \mathbf{x_1} + t\mathbf{a} + s\mathbf{b}$とかける.
+
+平面のベクトル表示は点$P$の位置ベクトルを$\mathbf{x}$とした時,
+
+$$
+(S): \mathbf{x} = \mathbf{x_1} + t\mathbf{a} + s\mathbf{b} \qquad (-\infty < t,s < \infty)
+$$
+
+### 法線ベクトル 空間ver
+空間上の平面の方程式
+
+$$
+\begin{equation}
+  (S): ax + by + cz = d
+\end{equation}
+$$
+
+があって, この平面$(S)$に平行で原点を通る平面$(S_0)$の方程式は
+
+$$
+\begin{equation}
+  (S_0): ax + by + cz = 0
+\end{equation}
+$$
+
+$\mathbf{a} = \begin{pmatrix} a \\ b \\ c \end{pmatrix}, \mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$とすると, (4)(5)は内積より以下のように表される.
+
+$$
+\begin{align*}
+  (S): (\mathbf{a, x}) = d \\
+  (S_0): (\mathbf{a, x}) = 0
+\end{align*}
+$$
+
+$\mathbf{a}$が平面$(S_0)$と垂直であることを意味している→平面$(S)$とも垂直である.
+$\mathbf{a}$を平面$(S)$の**法線ベクトル**と呼ぶ.
+
+- 二つの平面$(S), (S')$の法線ベクトル$\mathbf{a, a'}$が直行する時, その二つの平面$(S), (S')$は直行するという.
+- $\mathbf{a}$と$\mathbf{a'}$との交角を, $(S)$と$(S_0)$との交角という.
