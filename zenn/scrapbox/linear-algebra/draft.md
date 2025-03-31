@@ -18,7 +18,7 @@
 - 2つのベクトル$\mathbf{a, b}$が平行でないとき, それらは**線形独立**である.
 - 3つのベクトル$\mathbf{a,b,c}$が同一平面上の矢印で表せないとき, それらは**線形独立**である.
   - $\mathbf{a}=\overrightarrow{(OP)}, \mathbf{b}=\overrightarrow{(OQ)}, \mathbf{c}=\overrightarrow{(OR)}$と表示したときに4点$O, P, Q, R$が同一平面上にないこと.
-- $\mathbf{a, b, c}$が線形独立$\iff x\mathbf{a}+y\mathbf{b}+z\mathbf{c}$ for $\{x,y,z\} \in \mathbb{Z}$と一意的に表せる.
+- $\mathbf{a, b, c}$が線形独立$\iff x\mathbf{a}+y\mathbf{b}+z\mathbf{c}$ for $\{x,y,z\} \in \Z$と一意的に表せる.
   - $\mathbf{a,b,c}$の**線型結合**という.
 
 ### 内積
@@ -389,8 +389,89 @@ $$
 
 - $(S)$と$(S')$との交線$(l')$が直線$(l)$と成す角を, 直線$(l)$と平面$(S)$との交角という.
 
+交角を$\theta(0 \le \theta \le \pi / 2)$とすれば
+
+$$
+\sin \theta = \frac{|(\mathbf{a,b})|}{\| \mathbf{a} \| \cdot \| \mathbf{b} \|}.
+$$
+
+```txt:memo
+$\sin (\pi / 2 - \theta) = \cos (\theta)$
+$\mathbf{a}$と$\mathbf{b}$の成す角を$\theta'$とすると$\sin \theta = \cos \theta'$
+```
+
 もし, 直線$(l)$が平面$(S)$に垂直であれば以下の図のように無数に直行する平面が存在する.
 
 ![figure7](./assets/1-2-7.drawio.svg)
 
 :::
+
+## 平面の回転と行列. 線形変換
+
+### 行列
+平面上の全ての点を原点$O$を中心に角$\alpha$だけ回転させた場合を考える. 点$P$が点$P'$に移ったとしてそれぞれの位置ベクトルを$\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}, \quad \mathbf{x'} = \begin{pmatrix} x' \\ y' \end{pmatrix}$とする.
+
+![figure8](./assets/1-2-8.drawio.svg)
+
+この時$x', y'$は三角関数の加法定理より以下のように表される.
+
+$$
+\begin{equation}
+  \begin{rcases}
+    x' = \cos \alpha \cdot x - \sin \alpha \cdot y \\
+    y' = \sin \alpha \cdot x + \cos \alpha \cdot y
+  \end{rcases}.
+\end{equation}
+$$
+
+式(6)をまとめて書くと以下のようになる.
+
+$$
+\begin{equation}
+  \begin{pmatrix}
+    x' \\ y'
+  \end{pmatrix} = 
+  \begin{pmatrix}
+    \cos \alpha & - \sin \alpha \\
+    \sin \alpha & \cos \alpha
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\ y
+  \end{pmatrix}
+\end{equation}
+$$
+
+簡単のために
+
+$$
+A = 
+\begin{pmatrix}
+  \cos \alpha & - \sin \alpha \\
+  \sin \alpha & \cos \alpha
+\end{pmatrix}
+$$
+
+とすると, 式(7)は以下のように簡潔にかける.
+
+$$
+\begin{equation}
+  \mathbf{x'} = A \mathbf{x}.
+\end{equation}
+$$
+
+この時, $A$を角$\alpha$に対する**行列**という.
+
+ベクトルあるいは行列を構成する数を, そのベクトルあるいは行列の**成分**という.
+
+式(7)(8)の右辺を, 行列とベクトルの積とみなす.
+
+行列とベクトルの積に関して、次の諸性質がある.
+
+$$
+\begin{rcases}
+  A(\mathbf{x}+\mathbf{y}) = A\mathbf{x} + A\mathbf{y} \\
+  A(c\mathbf{x}) = c(A\mathbf{x})
+\end{rcases}.
+$$
+
+次に角$\alpha$だけ回転したものをさらに角$\beta$しただけ回転させた場合を考える. これによって点$P'$が点$P''$に移ったとする. 点$P''$の位置ベクトルを$\mathbf{x''}=\begin{pmatrix} x'' \\ y'' \end{pmatrix}$で表すと
