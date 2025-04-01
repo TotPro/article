@@ -474,4 +474,75 @@ $$
 \end{rcases}.
 $$
 
-次に角$\alpha$だけ回転したものをさらに角$\beta$しただけ回転させた場合を考える. これによって点$P'$が点$P''$に移ったとする. 点$P''$の位置ベクトルを$\mathbf{x''}=\begin{pmatrix} x'' \\ y'' \end{pmatrix}$で表すと
+次に角$\alpha$だけ回転したものをさらに角$\beta$だけ回転させた場合を考える. これによって点$P'$が点$P''$に移ったとする. 点$P''$の位置ベクトルを$\mathbf{x''}=\begin{pmatrix} x'' \\ y'' \end{pmatrix}$で表すと
+
+$$
+\begin{equation}
+  \begin{pmatrix}
+    x'' \\ y''
+  \end{pmatrix} =
+  \begin{pmatrix}
+    \cos \beta & - \sin \beta \\
+    \sin \beta & \cos \beta
+  \end{pmatrix}
+  \begin{pmatrix}
+    x' \\ y'
+  \end{pmatrix}
+\end{equation}
+$$
+
+あるいは
+
+$$
+\begin{equation}
+  \mathbf{x''} = B\mathbf{x'}
+\end{equation}
+$$
+
+ただし
+
+$$
+B =
+\begin{pmatrix}
+  \cos \beta & - \sin \beta \\
+  \sin \beta & \cos \beta
+\end{pmatrix}.
+$$
+
+式(9)(10)に, 式(7)(8)をそれぞれ代入すれば
+
+$$
+\begin{equation*}
+  \begin{pmatrix}
+    x'' \\ y''
+  \end{pmatrix} =
+  \begin{pmatrix}
+    \cos \beta & - \sin \beta \\
+    \sin \beta & \cos \beta
+  \end{pmatrix}
+  \{
+  \begin{pmatrix}
+    \cos \alpha & - \sin \alpha \\
+    \sin \alpha & \cos \alpha
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\ y
+  \end{pmatrix}
+  \}
+\end{equation*}
+$$
+
+あるいは
+
+$$
+\mathbf{x''} = B(A\mathbf{x})
+$$
+
+を得る.
+
+また, 角$\alpha, \beta$の回転を続けて行うということは角$\alpha + \beta$の回転であるから
+
+$$
+\begin{pmatrix}
+\end{pmatrix}
+$$
