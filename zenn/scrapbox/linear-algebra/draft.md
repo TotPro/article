@@ -535,7 +535,9 @@ $$
 あるいは
 
 $$
-\mathbf{x''} = B(A\mathbf{x})
+\begin{equation}
+  \mathbf{x''} = B(A\mathbf{x})
+\end{equation}
 $$
 
 を得る.
@@ -544,5 +546,145 @@ $$
 
 $$
 \begin{pmatrix}
+  x'' \\ y''
+\end{pmatrix} = 
+\begin{pmatrix}
+  \cos (\alpha + \beta) & - \sin (\alpha + \beta) \\
+  \sin (\alpha + \beta) & \cos (\alpha + \beta)
+\end{pmatrix}
+\begin{pmatrix}
+  x \\ y
 \end{pmatrix}
 $$
+
+あるいは
+
+$$
+\begin{equation}
+  \mathbf{x''} = C\mathbf{x}
+\end{equation}
+$$
+
+ただし
+
+$$
+C = 
+\begin{pmatrix}
+  \cos (\alpha + \beta) & - \sin (\alpha + \beta) \\
+  \sin (\alpha + \beta) & \cos (\alpha + \beta)
+\end{pmatrix}.
+$$
+
+行列$C$を行列$B$と行列$A$との積と定義し, $C=BA$と表記する.
+
+$$
+B(A\mathbf{x}) = (BA)\mathbf{x}
+$$
+
+が成り立つ.
+
+もう少し一般的な話として...
+
+$$
+A =
+\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}
+$$
+
+も行列と言うことにする.
+
+ベクトル$\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}$との積も同様に
+
+$$
+\begin{equation}
+  \mathbf{x'} = A\mathbf{x} =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\ y
+  \end{pmatrix} =
+  \begin{pmatrix}
+    ax + by \\
+    cx + dy
+  \end{pmatrix}
+\end{equation}
+$$
+
+と定義できる.
+
+行列$A$による変換を行ったあと, 行列$B = \begin{pmatrix} p & q \\ r & s \end{pmatrix}$による変換を続けて行う.
+
+定義より
+
+$$
+\begin{align*}
+  \mathbf{x''} = B\mathbf{x'} =
+  \begin{pmatrix}
+    p & q \\
+    r & s
+  \end{pmatrix}
+  \begin{pmatrix}
+    ax + by \\
+    cx + dy
+  \end{pmatrix} &=
+  \begin{pmatrix}
+    p(ax + by) + q(cx + dy)) \\
+    r(ax + by) + s(cx + dy)
+  \end{pmatrix} \\
+  &=
+  \begin{pmatrix}
+    (pa + qc)x + (pb + qd)y \\
+    (ra + sc)x + (rb + sd)y
+  \end{pmatrix}
+\end{align*}
+$$
+
+これもまた
+
+$$
+\mathbf{x''} = B(A\mathbf{x}) = (BA)\mathbf{x}.
+$$
+
+![figure9](./assets/1-2-9.drawio.svg)
+
+:::details 例1
+式(13)において, $\mathbf{x}, \mathbf{x'}$をそれぞれ点$P, P'$の位置ベクトルとすれば平面から平面への写像（平面の変換）が引き起こされる.
+
+例えば
+
+$$
+A =
+\begin{pmatrix}
+  1 & 0 \\
+  0 & -1
+\end{pmatrix}
+$$
+
+とすれば, $A$の引き起こす変換は平面のすべての点を$x$軸に関して対称移動させる変換である.
+
+$$
+A\mathbf{x} =
+\begin{pmatrix}
+  1 & 0 \\
+  0 & -1
+\end{pmatrix}
+\begin{pmatrix}
+  x \\ y
+\end{pmatrix} =
+\begin{pmatrix}
+  x \\ -y
+\end{pmatrix}
+$$
+
+これを$x$軸に関する**折返し**という.
+
+:::
+
+:::details 例2
+変換の順序で結果に違いがあるかどうか?
+
+:::
