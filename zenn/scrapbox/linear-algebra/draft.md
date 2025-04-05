@@ -687,4 +687,111 @@ $$
 :::details 例2
 変換の順序で結果に違いがあるかどうか?
 
+- 角$\pi / 2$の回転に対応する行列$A = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$
+- $x$軸に関する折返しの行列$B = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$
+
+とする.
+
+したがって
+
+$$
+AB = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \qquad BA = \begin{pmatrix} 0 & -1 \\ -1 & 0 \end{pmatrix}
+$$
+
+となり, $AB \neq BA$である.
+
+実際, $x$軸に関して折返してから$\pi / 2$回転させる操作($AB$)と$\pi / 2$回転させてから$x$軸に関して折返す操作$(BA)$は結果が異なる.
+
+$$
+(AB)\mathbf{x} =
+\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  x \\ y
+\end{pmatrix} =
+\begin{pmatrix}
+  y \\ x
+\end{pmatrix}
+$$
+
+$$
+(BA)\mathbf{x} =
+\begin{pmatrix}
+  0 & -1 \\
+  -1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  x \\ y
+\end{pmatrix} =
+\begin{pmatrix}
+  -y \\ -x
+\end{pmatrix}
+$$
+
+:::
+
+### 線形変換
+任意の行列$A$と, 任意のベクトル$\mathbf{x, y}$, 定数$c$に対して
+
+$$
+\begin{equation}
+  \begin{rcases}
+    A(\mathbf{x} + \mathbf{y}) = A\mathbf{x} + A\mathbf{y} \\
+    A(c\mathbf{x}) = c(A\mathbf{x})
+  \end{rcases}
+\end{equation}
+$$
+
+が成り立つ.
+
+この性質を, 行列$A$によって引き起こされる$\bold{V}^2$の変換$T_A: \mathbf{x} \to A\mathbf{x}$の**線形性**と言う.
+
+一般に, 任意のベクトル$\mathbf{x}$に対してもう一つのベクトル$T\mathbf{x}$を対応させる規則$T$($\bold{V}^2$の変換$T$)があって, 以下の二つの性質を持つとする.
+
+```memo:txt
+↑これ, 規則$T$って言うより写像て呼んだ方がわかりよくない?
+```
+
+$$
+\begin{rcases}
+  T(\mathbf{x} + \mathbf{y}) = T\mathbf{x} + T\mathbf{y} \\
+  T(c\mathbf{x}) = c(T\mathbf{x})
+\end{rcases}
+$$
+
+このような$T$を, $\bold{V}^2$の**線形変換**と言う.
+
+式(14)は, 任意の行列$A$によって定まる変換$T_A$が線形変換であることを示している.
+
+線形変換は、ある行列によって定まる変換に限ることが証明される.
+
+:::details 例2
+$T$が線形変換である時, 単位ベクトル$\mathbf{e_1, e_2}$に着目して,
+
+$$
+T\mathbf{e_1} = \begin{pmatrix} a \\ c \end{pmatrix}, \quad T\mathbf{e_2} = \begin{pmatrix} b \\ d \end{pmatrix}
+$$
+
+とする. 任意のベクトル$\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}$は, 
+
+$$
+\mathbf{x} = x\mathbf{e_1} + y\mathbf{e_2}
+$$
+
+と表されるから, $T$の線形性より
+
+$$
+\begin{align*}
+  T\mathbf{x} = T(x\mathbf{e_1} + y\mathbf{e_2}) &= T(x\mathbf{e_1}) + T(y\mathbf{e_2}) \\
+  &= xT(\mathbf{e_1}) + yT(\mathbf{e_2}) \\
+  &= x\begin{pmatrix} a \\ c \end{pmatrix} + y\begin{pmatrix} b \\ d \end{pmatrix} \\
+  &= \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix} \\
+  &= \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}
+\end{align*}
+$$
+
+したがって, $T$は行列$A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$によって定まる変換.
+
 :::
