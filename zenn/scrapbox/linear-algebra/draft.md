@@ -411,7 +411,7 @@ $\mathbf{a}$と$\mathbf{b}$の成す角を$\theta'$とすると$\sin \theta = \c
 ### 行列
 平面上の全ての点を原点$O$を中心に角$\alpha$だけ回転させた場合を考える. 点$P$が点$P'$に移ったとしてそれぞれの位置ベクトルを$\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}, \quad \mathbf{x'} = \begin{pmatrix} x' \\ y' \end{pmatrix}$とする.
 
-![figure8](./assets/1-2-8.drawio.svg)
+![figure8](./assets/1-3-1.drawio.svg)
 
 この時$x', y'$は三角関数の加法定理より以下のように表される.
 
@@ -649,9 +649,9 @@ $$
 \mathbf{x''} = B(A\mathbf{x}) = (BA)\mathbf{x}.
 $$
 
-![figure9](./assets/1-2-9.drawio.svg)
+![figure9](./assets/1-3-2.drawio.svg)
 
-:::details 例1
+:::details 例6
 式(13)において, $\mathbf{x}, \mathbf{x'}$をそれぞれ点$P, P'$の位置ベクトルとすれば平面から平面への写像（平面の変換）が引き起こされる.
 
 例えば
@@ -684,7 +684,7 @@ $$
 
 :::
 
-:::details 例2
+:::details 例7
 変換の順序で結果に違いがあるかどうか?
 
 - 角$\pi / 2$の回転に対応する行列$A = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$
@@ -732,7 +732,7 @@ $$
 
 :::
 
-### 線形変換
+### 線形変換 平面ver
 任意の行列$A$と, 任意のベクトル$\mathbf{x, y}$, 定数$c$に対して
 
 $$
@@ -767,7 +767,7 @@ $$
 
 線形変換は、ある行列によって定まる変換に限ることが証明される.
 
-:::details 例2
+:::details 例8
 $T$が線形変換である時, 単位ベクトル$\mathbf{e_1, e_2}$に着目して,
 
 $$
@@ -793,5 +793,149 @@ $$
 $$
 
 したがって, $T$は行列$A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$によって定まる変換.
+
+:::
+
+:::details 例9
+$\mathbf{o}$ではないベクトル$\mathbf{a}$がある. 任意のベクトル$\mathbf{x}$に対して$\mathbf{a}$に平行なベクトル$\mathbf{x'}$で$\mathbf{x}-\mathbf{x'}$が$\mathbf{a}$と直行するようなものがただ一つ存在する.
+
+![figure10](./assets/1-3-3.drawio.svg)
+
+$\mathbf{x}$に$\mathbf{x'}$を対応させる変換$T$を$\bold{V}^2$の$\mathbf{a}$への**射影子**と言い, $\mathbf{x'} = T\mathbf{x}$を$\mathbf{x}$の$\mathbf{a}$への**正射影**と言う.
+例1より
+
+$$
+T\mathbf{x} = \frac{(\mathbf{a, x})}{(\mathbf{a, a})} \mathbf{a}
+$$
+
+射影子$T$は$\bold{V}^2$の線形変換である.
+
+:::
+
+## 三次行列と$\bold{V}^3$の線形変換
+
+### 線形変換 空間ver
+空間の任意のベクトル$\mathbf{x}$に対して, もう一つの空間ベクトル$T\mathbf{x}$を対応させる規則$T$が以下の二つの性質を持つとする.
+
+$$
+\begin{rcases}
+  T(\mathbf{x} + \mathbf{y}) = T\mathbf{x} + T\mathbf{y} \\
+  T(c\mathbf{x}) = c(T\mathbf{x})
+\end{rcases}.
+$$
+
+このような$T$を$\bold{V}^3$の**線形変換**と言う.
+
+### 三次行列
+九個の数$a_{ij}(1 \le i, j \le 3)$を正方形に並べた
+
+$$
+A =
+\begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+$$
+
+を三次の行列と言う.
+
+行列とベクトルの積, 行列同士の積が今までと全く同様に定義される.
+
+$\mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}, B = \begin{pmatrix} b_{11} & b_{12} & b_{13} \\ b_{21} & b_{22} & b_{23} \\ b_{31} & b_{32} & b_{33} \end{pmatrix}$に対して,
+
+$$
+A\mathbf{x} =
+\begin{pmatrix}
+  a_{11}x + a_{12}y + a_{13}z \\
+  a_{21}x + a_{22}y + a_{23}z \\
+  a_{31}x + a_{32}y + a_{33}z
+\end{pmatrix}
+\\
+AB = 
+\begin{pmatrix}
+  a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} & a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32} & a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} \\
+  a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} & a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} & a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} \\
+  a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} & a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32} & a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33}
+\end{pmatrix}
+$$
+
+によって定義する.
+
+$AB = \begin{pmatrix} c_{11} & c_{12} & c_{13} \\ c_{21} & c_{22} & c_{23} \\ c_{31} & c_{32} & c_{33} \end{pmatrix}$として
+
+$$
+c_{ik} = \sum_{j = 1}^{3}a_{ik}b_{kj} = a_{i1}b_{1k} + a_{i2}b_{2k} + a_{i3}b_{3k} \quad (i, k = 1, 2, 3)
+$$
+
+と表記することもある(こっちの方が簡潔)
+
+これに対しても同様に
+
+$$
+\begin{equation}
+  \begin{rcases}
+    (AB)\mathbf{x} = A(B\mathbf{x}) \\
+    (AB)C = A(BC) 
+  \end{rcases}
+\end{equation} \\
+\begin{equation}
+  \begin{rcases}
+    A(\mathbf{x} + \mathbf{y}) = A\mathbf{x} + A\mathbf{y} \\
+    A(c\mathbf{x}) = c(A\mathbf{x})
+  \end{rcases}
+\end{equation} \\
+$$
+
+が成り立つ.
+
+三次行列$A$に対し, $\bold{V}^3$の変換を$T_A$を
+
+$$
+T_A = A\mathbf{x}
+$$
+
+によって定義すれば(16)により$T_A$は$\bold{V}^3$の線形変換である.
+
+:::details 例10
+$T$が線形変換である時, 単位ベクトル$\mathbf{e_1, e_2, e_3}$に着目して,
+
+$$
+T\mathbf{e_1} = \begin{pmatrix} a_{11} \\ a_{21} \\ a_{31} \end{pmatrix}, \quad T\mathbf{e_2} = \begin{pmatrix} a_{12} \\ a_{22} \\ a_{32} \end{pmatrix}, \quad T\mathbf{e_3} = \begin{pmatrix} a_{13} \\ a_{23} \\ a_{33} \end{pmatrix}
+$$
+
+とする. 任意のベクトル$\mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$は,
+
+$$
+\mathbf{x} = x\mathbf{e_1} + y\mathbf{e_2} + z\mathbf{e_3}
+$$
+
+と表されるから, $T$の線形性より
+
+$$
+\begin{align*}
+  T\mathbf{x} = T(x\mathbf{e_1} + y\mathbf{e_2}) &= T(x\mathbf{e_1}) + T(y\mathbf{e_2}) +T(z\mathbf{e_3}) \\
+  &= xT(\mathbf{e_1}) + yT(\mathbf{e_2}) + zT(\mathbf{e_3}) \\
+  &= x\begin{pmatrix} a_{11} \\ a_{21} \\ a_{31} \end{pmatrix} + y\begin{pmatrix} a_{12} \\ a_{22} \\ a_{32} \end{pmatrix} + z\begin{pmatrix} a_{13} \\ a_{23} \\ a_{33} \end{pmatrix} \\
+  &= \begin{pmatrix} a_{11}x + a_{12}y + a_{13}z \\ a_{21}x + a_{22}y + a_{23}z \\ a_{31}x + a_{32}y + a_{33}z \end{pmatrix} \\
+  &= \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} \\
+  &= A\mathbf{x} = T_A\mathbf{x}
+\end{align*}
+$$
+
+したがって, $T = T_A$.
+
+:::
+
+:::details 例11
+空間の全ての点を原点に関して対称移動させる変換に対応する行列は
+
+$$
+\begin{pmatrix}
+  -1 & 0 & 0 \\
+  0 & -1 & 0 \\
+  0 & 0 & -1
+\end{pmatrix}
+$$
 
 :::
