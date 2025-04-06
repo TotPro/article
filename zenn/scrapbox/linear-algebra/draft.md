@@ -935,7 +935,41 @@ $$
   -1 & 0 & 0 \\
   0 & -1 & 0 \\
   0 & 0 & -1
+\end{pmatrix}.
+$$
+
+実際
+
+$$
+\begin{pmatrix}
+  -1 & 0 & 0 \\
+  0 & -1 & 0 \\
+  0 & 0 & -1
+\end{pmatrix}
+\begin{pmatrix}
+  x \\ y \\ z
+\end{pmatrix} =
+\begin{pmatrix}
+  -x \\ -y \\ -z
 \end{pmatrix}
 $$
 
+また$z$軸まわりに角$\alpha$だけ回転させる変換に対応する行列は
+
+$$
+\begin{pmatrix}
+  \cos \alpha & - \sin \alpha  & 0\\
+  \sin \alpha & \cos \alpha & 0 \\
+  0 & 0 & 1
+\end{pmatrix}
+$$
+
+```memo:txt
+$z$軸まわりなので平面の点の回転と同じなので(1, 1)(1, 2)(2, 1)(2, 2)成分は平面の時と同じ
+また$z$軸に対応する座標は変わらないので1
+```
+
 :::
+
+:::details 例12
+$\mathbf{o}$でないベクトル$\mathbf{a}$に対し, $\mathbf{a}$への射影子$T$が$\bold{V}^2$の場合と全く同様に定義できて$\bold{V}^3$の線形変換となる.
