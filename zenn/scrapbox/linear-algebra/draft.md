@@ -973,3 +973,31 @@ $z$軸まわりなので平面の点の回転と同じなので(1, 1)(1, 2)(2, 1
 
 :::details 例12
 $\mathbf{o}$でないベクトル$\mathbf{a}$に対し, $\mathbf{a}$への射影子$T$が$\bold{V}^2$の場合と全く同様に定義できて$\bold{V}^3$の線形変換となる.
+このときも
+
+$$
+T\mathbf{x} = \frac{(\mathbf{a, x})}{(\mathbf{a, a})} \mathbf{a}
+$$
+
+一方
+
+線形独立なベクトル$\mathbf{b, c}$があるとする. 任意のベクトル$\mathbf{x}$に対し, $\mathbf{b,c}$の線型結合$\mathbf{x'}$で, $\mathbf{x}-\mathbf{x'}$が$\mathbf{b}$とも$\mathbf{c}$とも直交するような唯一存在する.
+
+```memo:txt
+つまり$\mathbf{b, c}$の張る平面と直交するような$\mathbf{x}-\mathbf{x'}$が唯一存在する
+```
+
+$\mathbf{x}$に$\mathbf{x'}$を対応させるような変換$S$を$\bold{V}^3$の$\mathbf{b, c}$の張る平面への射影子と言い, $\mathbf{x'} = S\mathbf{x}$を$\mathbf{x}$の$\mathbf{b, c}$の張る正射影と言う.
+
+![figure11](./assets/1-3-4.drawio.svg)
+
+例4より
+
+$$
+T\mathbf{x} = \mathbf{x} - \frac{(\mathbf{a, x})}{(\mathbf{a, a})} \mathbf{a}
+$$
+
+射影子$S$は$\bold{V}^3$の線形変換である.
+
+:::
+
