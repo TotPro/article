@@ -1001,3 +1001,118 @@ $$
 
 :::
 
+## 行列式およびベクトル積
+
+### 行列式
+行列$A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$に対して, 
+
+$$
+ad - bc
+$$
+
+を$A$の行列式(determinant)と言い,
+
+$$
+\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}, \quad
+|A|, \quad \det A
+$$
+などで表す.
+
+$\mathbf{a} = \begin{pmatrix} a \\ c \end{pmatrix}, \mathbf{b} = \begin{pmatrix} b \\ d \end{pmatrix}$とするとき, $\det (\mathbf{a, b})$と表すこともある.
+
+次の諸性質がある.
+- $\mathbf{a, b}$が線形独立 $\iff$ $\det (\mathbf{a, b}) \neq 0$
+- $\det (\mathbf{a, b}) = -\det (\mathbf{b, a})$
+- $\det (\mathbf{a_1}+\mathbf{a_2}, \mathbf{b}) = \det (\mathbf{a_1, b}) + \det (\mathbf{a_2, b})$
+- $\det (c\mathbf{a, b}) = c \det (\mathbf{a, b})$
+- $|AB| = |A||B|$
+
+$\det (\mathbf{a, b})$は$\mathbf{a, b}$の張る平行四辺形の面積に符号をつけたものに等しい.
+
+$$
+\mathbf{x_1} = \begin{pmatrix} x_1 \\ y_1 \end{pmatrix}, \quad \mathbf{x_2} = \begin{pmatrix} x_2 \\ y_2 \end{pmatrix}, \quad X = \begin{pmatrix} x_1 & x_2 \\ y_1 & y_2 \end{pmatrix}
+$$
+
+とすれば
+
+$$
+|AX| = \det(A\mathbf{x_1}, A\mathbf{x_2}).
+$$
+
+また$|AX| = |A||X| = |A|\det(\mathbf{x_1, x_2})$であるから
+
+$$
+|A| = \frac{\det(A\mathbf{x_1}, A\mathbf{x_2})}{\det(\mathbf{x_1, x_2})}
+$$
+
+線形変換$T_A$によって任意の平行四辺形は平行四辺形に移るが, 行列式$|A|$はその面積比に等しい.
+
+```memo:txt
+$\mathbf{x_1, x_2}$が張る平行四辺形→$A\mathbf{x_1}, A\mathbf{x_2}$が張る平行四辺形
+っていう変換
+$|A|$はその面積比
+```
+
+したがって, 行列式$|A|$は線形変換$T_A$によって決まり, 座標系の選び方によらない.
+
+:::details 例13
+$ad - bd \neq 0$ならば, 連立方程式
+
+$$
+\begin{rcases}
+  ax + by = e \\
+  cx + dy = f
+\end{rcases}
+$$
+
+は唯一の解を持ち
+
+$$
+x = \frac
+{
+  \begin{vmatrix}
+    e & b \\
+    f & d
+  \end{vmatrix}
+}
+{
+  \begin{vmatrix}
+    a & b \\
+    c & d
+  \end{vmatrix}
+}, \quad
+y = \frac
+{
+  \begin{vmatrix}
+    a & e \\
+    c & f
+  \end{vmatrix}
+}
+{
+  \begin{vmatrix}
+    a & b \\
+    c & d
+  \end{vmatrix}
+}
+
+$$
+
+で与えられる. (愚直に計算すれば確かめられる)
+
+また
+
+$$
+\mathbf{a} = \begin{pmatrix} a \\ c \end{pmatrix}, \quad \mathbf{b} = \begin{pmatrix} b \\ d \end{pmatrix}, \quad \mathbf{c} = \begin{pmatrix} e \\ f \end{pmatrix}
+$$
+
+と置けば上の連立一次方程式は
+
+$$
+x\mathbf{a} + y\mathbf{b} = \mathbf{c}
+$$
+
+とかける.
+:::
