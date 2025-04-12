@@ -1115,4 +1115,76 @@ x\mathbf{a} + y\mathbf{b} = \mathbf{c}
 $$
 
 とかける.
+
+$\det (\mathbf{a, b}) \neq 0$の時, $\mathbf{a, b}$は線形独立であるから任意の$\mathbf{c}$は$\mathbf{a, b}$の線型結合で一意的に表される. つまり$x, y$が一意的に決まるので方程式は唯一の解を持つ.
+
+:::
+
+### 外積
+$\bold{V}^3$の二つのベクトル$\mathbf{a, b}$が線型独立である時, 次の性質を満たすベクトル$\mathbf{c}$がちょうど一つ存在する.
+- $\mathbf{c}$は$\mathbf{a}$とも$\mathbf{b}$とも直交する.
+- $\mathbf{a, b, c}$は右手系を成す.
+- $\mathbf{c}$の長さは$\mathbf{a, b}$の貼る平行四辺形の面積に等しい.
+
+:::details 右手系
+単位ベクトル$\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3,$がそれぞれ右手の親指, 人差し指, 中指の上にあるような座標系を**右手系**と言う
+
+:::
+
+この$\mathbf{c}$を$\mathbf{a}$と$\mathbf{b}$の**外積**または**ベクトル積**と言う.
+- $\mathbf{a} \times \mathbf{b}$で表す.
+- $\mathbf{a, b}$が線型独立でない時, $\mathbf{a} \times \mathbf{b} = \mathbf{o}$.
+- $\mathbf{a} \times \mathbf{b} = -\mathbf{b} \times \mathbf{a}$.
+- $c(\mathbf{a} \times \mathbf{b}) = c\mathbf{a} \times \mathbf{b} = \mathbf{a} \times c\mathbf{b}$.
+
+![figure12](./assets/1-3-5.drawio.svg)
+
+右手系に関して$\mathbf{a} = \begin{pmatrix} a \\ b \\ c \end{pmatrix}, \quad \mathbf{b} = \begin{pmatrix} a' \\ b' \\ c' \end{pmatrix}$ならば
+
+$$
+\begin{equation}
+  \mathbf{a} \times \mathbf{b} =
+  \begin{pmatrix}
+    \begin{vmatrix}
+      b & b' \\
+      c & c'
+    \end{vmatrix} \\ \\
+    \begin{vmatrix}
+      c & c' \\
+      a & a'
+    \end{vmatrix} \\ \\
+    \begin{vmatrix}
+      a & a' \\
+      b & b'
+    \end{vmatrix}
+  \end{pmatrix}
+\end{equation}.
+$$
+
+:::details 証明
+式(17)の右辺を$\mathbf{c}$として$\mathbf{c}$が三つの条件
+1. $\mathbf{c}$は$\mathbf{a}$とも$\mathbf{b}$とも直交する.
+2. $\mathbf{a, b, c}$は右手系を成す.
+3. $\mathbf{c}$の長さは$\mathbf{a, b}$の貼る平行四辺形の面積に等しい.
+
+を満たすことを示す.
+
+1. 直接計算によって確かめられる.
+2. $\mathbf{a} = \mathbf{e}_1, \mathbf{b} = \mathbf{e}_2$に関しては, 式(17)の両辺は共に$\mathbf{e}_3$となる.  
+ベクトルの組$\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3$から連続的に$\mathbf{a, b, c}$まで$\mathbf{a, b}$の線型独立性を保ちながら移す. もし途中で左手系に変わる場合, 変わる瞬間に$\mathbf{c}$の長さは$0$になり$\mathbf{a, b}$が線型独立であることに反するため, $\mathbf{a, b, c}$は右手系である.
+3. 
+
+$$
+\begin{align*}
+  \| \mathbf{c} \|^2 &= (bc' - cb')^2 + (ca' - ac')^2 + (ab' - ba')^2 \\
+  &= (a^2 + b^2 + c^2)(a'^2 + b'^2 + c'^2) - (aa' + bb' + cc')^2 \\
+  &= \| \mathbf{a} \|^2 \| \mathbf{b} \|^2 - (\mathbf{a, b})^2
+\end{align*} \\
+\therefore \| c \| = \sqrt{\| \mathbf{a} \|^2 \| \mathbf{b} \|^2 - (\mathbf{a, b})^2}
+$$
+
+$\| c \|$は$\mathbf{a, b}$の張る平行四辺形の面積に等しい.
+
+証明終.
+
 :::
