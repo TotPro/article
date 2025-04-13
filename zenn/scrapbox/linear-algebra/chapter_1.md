@@ -1,15 +1,3 @@
-表記まとめ
-- $A \xrightarrow{T} B$
-  - $T$ : $A$から$B$への写像
-  - $x$の$T$による像 : $A$の元に対して$T$によって決まる$B$の元
-    - $T(x), Tx$で表す
-- $A \xrightarrow{T} B \xrightarrow{S} C$
-  - 合成写像 : $A$の元$x$に対して$S(Tx)$を対応させる写像
-    - $S \circ T, ST$で表す
-- $A \xrightarrow{T} A$
-  - $A$の変換 : 写像$T$
-
-
 # 第1章
 
 ## 平面および空間のベクトル
@@ -1170,6 +1158,19 @@ $$
 を満たすことを示す.
 
 1. 直接計算によって確かめられる.
+
+$$
+\begin{align*}
+  &\| \mathbf{a} \|^2 = a^2 + b^2 + c^2 \\
+  &\| \mathbf{c} \|^2 = (bc' - cb')^2 + (ca' - ac')^2 + (ab' - ba')^2 \\
+  &\| \mathbf{c} - \mathbf{a} \|^2 = (bc' - cb' - a)^2 + (ca' - ac' - b)^2 + (ab' - ba' - c)^2 \\
+  &\| \mathbf{a} \|^2 + \| \mathbf{c} \|^2 - \| \mathbf{c} - \mathbf{a} \| = \text{\textasciitilde} = 0
+\end{align*} \\
+\therefore \frac{1}{2} \| \mathbf{a} \|^2 + \| \mathbf{c} \|^2 - \| \mathbf{c} - \mathbf{a} \| = (\mathbf{a, c}) = 0
+$$
+
+$\mathbf{a}$と$\mathbf{c}$が直交することが確かめられた. $\mathbf{b}$と$\mathbf{c}$も同様. (のはず)
+
 2. $\mathbf{a} = \mathbf{e}_1, \mathbf{b} = \mathbf{e}_2$に関しては, 式(17)の両辺は共に$\mathbf{e}_3$となる.  
 ベクトルの組$\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3$から連続的に$\mathbf{a, b, c}$まで$\mathbf{a, b}$の線型独立性を保ちながら移す. もし途中で左手系に変わる場合, 変わる瞬間に$\mathbf{c}$の長さは$0$になり$\mathbf{a, b}$が線型独立であることに反するため, $\mathbf{a, b, c}$は右手系である.
 3. 
