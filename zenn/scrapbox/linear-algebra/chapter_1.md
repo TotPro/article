@@ -991,7 +991,7 @@ $$
 
 ## 行列式およびベクトル積
 
-### 行列式
+### 行列式$(2 \times 2)$
 行列$A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$に対して, 
 
 $$
@@ -1007,6 +1007,7 @@ c & d
 \end{vmatrix}, \quad
 |A|, \quad \det A
 $$
+
 などで表す.
 
 $\mathbf{a} = \begin{pmatrix} a \\ c \end{pmatrix}, \mathbf{b} = \begin{pmatrix} b \\ d \end{pmatrix}$とするとき, $\det (\mathbf{a, b})$と表すこともある.
@@ -1166,7 +1167,7 @@ $$
   &\| \mathbf{c} - \mathbf{a} \|^2 = (bc' - cb' - a)^2 + (ca' - ac' - b)^2 + (ab' - ba' - c)^2 \\
   &\| \mathbf{a} \|^2 + \| \mathbf{c} \|^2 - \| \mathbf{c} - \mathbf{a} \| = \text{\textasciitilde} = 0
 \end{align*} \\
-\therefore \frac{1}{2} \| \mathbf{a} \|^2 + \| \mathbf{c} \|^2 - \| \mathbf{c} - \mathbf{a} \| = (\mathbf{a, c}) = 0
+\therefore \frac{1}{2} (\| \mathbf{a} \|^2 + \| \mathbf{c} \|^2 - \| \mathbf{c} - \mathbf{a} \|) = (\mathbf{a, c}) = 0
 $$
 
 $\mathbf{a}$と$\mathbf{c}$が直交することが確かめられた. $\mathbf{b}$と$\mathbf{c}$も同様. (のはず)
@@ -1187,5 +1188,124 @@ $$
 $\| c \|$は$\mathbf{a, b}$の張る平行四辺形の面積に等しい.
 
 証明終.
+
+:::
+
+- $\mathbf{a} \times (\mathbf{b}_1 + \mathbf{b}_2) = \mathbf{a} \times \mathbf{b}_1 + \mathbf{a} \times \mathbf{b}_2$
+- $(\mathbf{a}_1 + \mathbf{a}_2) \times \mathbf{b} = \mathbf{a_1} \times \mathbf{b} + \mathbf{a_2} \times \mathbf{b}$
+
+:::details 例14
+$\mathbf{x}_0$を位置ベクトルとする点$P$と$(l): \mathbf{x} = \mathbf{x}_1 + t\mathbf{a}$を持つ直線との最短距離は例3より
+
+$$
+\frac{\| \mathbf{a} \times (\mathbf{x}_0 - \mathbf{x}_1) \|}{\| \mathbf{a} \|}
+$$
+
+```memo:txt
+例3の最短距離の公式と証明の3.を照らし合わせるときれいに外積で表せる
+```
+
+:::
+
+::::details 平行六面体
+ベクトル$\mathbf{a, b, c}$の張る平行六面体の体積$v$は
+
+$$
+v = |(\mathbf{a} \times \mathbf{b}, \mathbf{c})|
+$$
+
+で与えられる.
+
+![figure13](./assets/1-5-1.drawio.svg)
+
+:::details 証明
+$\mathbf{c}$と$\mathbf{a} \times \mathbf{b}$との交角を$\theta (0 \le \theta \le \pi)$とすれば
+
+$$
+v = \| \mathbf{a} \times \mathbf{b} \| \cdot \| \mathbf{c} \| | \cos\theta | = |(\mathbf{a} \times \mathbf{b}, \mathbf{c}) |.
+$$
+
+:::
+
+::::
+
+### 行列式$(3 \times 3)$
+三次行列$A = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}$に対して, 
+
+$$
+\mathbf{a}_1 = \begin{pmatrix} a_{11} \\ a_{21} \\ a_{31} \end{pmatrix}, \quad
+\mathbf{a}_2 = \begin{pmatrix} a_{12} \\ a_{22} \\ a_{32} \end{pmatrix}, \quad
+\mathbf{a}_3 = \begin{pmatrix} a_{13} \\ a_{23} \\ a_{33} \end{pmatrix}
+$$
+
+と置く.
+
+$\mathbf{a}_1 \times \mathbf{a}_2$と$\mathbf{a}_3$との内積$(\mathbf{a}_1 \times \mathbf{a}_2, \mathbf{a}_3)$を行列$A$の行列式と言い,
+
+$$
+\begin{vmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{vmatrix}, \quad
+|A|, \quad
+\det A, \quad
+\det(\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3)
+$$
+
+などで表す.
+
+$\det (\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3)$はベクトル$\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$の張る平行六面体の体積に符号をつけたものに等しい.
+
+- $\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$が線形独立 $\iff$ $\det (\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3) \neq 0$.
+- $(\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3)$のうち, 二つのベクトルの順序を交換すれば, $\det (\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3)$は符号が変わり, 絶対値は等しい.
+- $\det (\mathbf{a}_1 + \mathbf{a'}_1, \mathbf{a}_2, \mathbf{a}_3) = \det (\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3) + \det (\mathbf{a'}_1, \mathbf{a}_2, \mathbf{a}_3)$. $\mathbf{a}_2, \mathbf{a}_3$も同様.
+- $\det (c\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3) = c \cdot \det (\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3)$. $\mathbf{a}_2, \mathbf{a}_3$も同様.
+
+実際に計算してみると
+
+$$
+\begin{align*}
+  \det A &= (\mathbf{a}_1 \times \mathbf{a}_2, \mathbf{a}_3) \\
+  &= \begin{vmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{vmatrix} \\
+  &= a_{13} \begin{vmatrix} a_{21} & a_{22} \\ a_{31} & a_{32} \end{vmatrix} +
+      a_{23} \begin{vmatrix} a_{31} & a_{32} \\ a_{11} & a_{12} \end{vmatrix} +
+      a_{33} \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix} \\
+  &= a_{13}a_{21}a_{32} + a_{23}a_{31}a_{12} + a_{33}a_{11}a_{22} - a_{13}a_{22}a_{31} - a_{23}a_{32}a_{11} - a_{33}a_{12}a_{21}
+\end{align*}
+$$
+
+$|AB| = |A||B|$も確かめられる. (計算が面倒くさいので割愛)
+
+$$
+\mathbf{x}_1 = \begin{pmatrix} x_1 \\ y_1 \\ z_1 \end{pmatrix}, \quad
+\mathbf{x}_2 = \begin{pmatrix} x_2 \\ y_2 \\ z_2 \end{pmatrix}, \quad
+\mathbf{x}_3 = \begin{pmatrix} x_3 \\ y_3 \\ z_3 \end{pmatrix}, \quad
+X = \begin{pmatrix} x_1 & x_2 & x_3 \\ y_1 & y_2 & y_3 \\ z_1 & z_2 & z_3 \end{pmatrix} 
+$$
+
+とすれば
+
+$$
+|AX| = \det (A\mathbf{x}_1, A\mathbf{x}_2, A\mathbf{x}_3)
+$$
+
+また$|AX| = |A||X| = |A| \cdot \det (\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3)$であるから
+
+$$
+|A| = \frac{\det (A\mathbf{x}_1, A\mathbf{x}_2, A\mathbf{x}_3)}{\det (\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3)}
+$$
+
+以下, $(2 \times 2)$と同様.
+
+:::details 例15
+二直線が同一平面上にないとき, それらは**捩れの位置**にあると言う. つまり二直線が交わらず平行でないことである.
+
+二直線
+
+$$
+(l_1): \mathbf{x} = \mathbf{x}_1 + t\mathbf{a} \\
+(l_2): \mathbf{x} = \mathbf{x}_2 + t\mathbf{a}
+$$
+
+が捩れの位置にあるとき, この両方と直行するよう直線がちょうど一本存在することを示し, $(l_1)$と$(l_2)$の最短距離を求める.
+
+![figure14](./assets/1-5-2.drawio.svg)
 
 :::
