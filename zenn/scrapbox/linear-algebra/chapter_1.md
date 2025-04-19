@@ -35,7 +35,7 @@ $$
 
 ### 平面上の直線とベクトル表示（助変数表示）
 
-![figure1](./assets/1-2-1.drawio.svg)
+![figure1](./ch1-assets/1-2-1.drawio.svg)
 
 上の図があるとき, 任意の実数$t$に対して$\mathbf{x_1}+t\mathbf{a}$を位置ベクトルとする点は直線$(l)$上にある.
 つまり, 直線$(l)$上の任意の点$P$に対し、適当な実数$t$を取れば$\overrightarrow{(OP)}=\mathbf{x_1}+t\mathbf{a}$とかける.
@@ -119,12 +119,12 @@ $\mathbf{a}$を直線$(l)$の**法線ベクトル**と呼ぶ.
 ```txt:memo
 別に$l$は$mathbf{a}$と角を成しているわけでないので内積自体はnot zero という理解で良い？
 ```
-![figure2](./assets/1-2-2.drawio.svg)
+![figure2](./ch1-assets/1-2-2.drawio.svg)
 
 :::details 例1
 平面上の点$P$から直線$(l)$へ下した垂線の足$P'$および$P$との最短距離$\overline{PP'}$を求める.
 
-![figure3](./assets/1-2-3.drawio.svg)
+![figure3](./ch1-assets/1-2-3.drawio.svg)
 
 $P, P'$それぞれの位置ベクトルを$\mathbf{x_0, x'_0}$とする. 
 
@@ -271,7 +271,7 @@ $$
 :::
 
 ### 空間内の平面のベクトル表示
-![figure4](./assets/1-2-4.drawio.svg)
+![figure4](./ch1-assets/1-2-4.drawio.svg)
 
 空間内の平面も一つの一次方程式で表されるが, ベクトル表示でも表すことができる.
 
@@ -321,7 +321,7 @@ $\mathbf{a}$を平面$(S)$の**法線ベクトル**と呼ぶ.
 :::details 例4
 点$P$から平面$(S)$へと下した垂線の足$P'$および$P$と平面$(S')$との最短距離$\overline{PP'}$を求める.
 
-![figure5](./assets/1-2-5.drawio.svg)
+![figure5](./ch1-assets/1-2-5.drawio.svg)
 
 $P, P'$のそれぞれの位置ベクトルを$\mathbf{x_0}, \mathbf{x'_0}$とする.
 
@@ -373,7 +373,7 @@ $$
 :::details 例5
 直線$(l)$が平面$(S)$に垂直でなければ, 直線$(l)$を含んだ平面$(S)$と直行する平面がちょうど一つ存在する.
 
-![figure6](./assets/1-2-6.drawio.svg)
+![figure6](./ch1-assets/1-2-6.drawio.svg)
 
 - $(S)$と$(S')$との交線$(l')$が直線$(l)$と成す角を, 直線$(l)$と平面$(S)$との交角という.
 
@@ -390,7 +390,7 @@ $\mathbf{a}$と$\mathbf{b}$の成す角を$\theta'$とすると$\sin \theta = \c
 
 もし, 直線$(l)$が平面$(S)$に垂直であれば以下の図のように無数に直行する平面が存在する.
 
-![figure7](./assets/1-2-7.drawio.svg)
+![figure7](./ch1-assets/1-2-7.drawio.svg)
 
 :::
 
@@ -399,7 +399,7 @@ $\mathbf{a}$と$\mathbf{b}$の成す角を$\theta'$とすると$\sin \theta = \c
 ### 行列
 平面上の全ての点を原点$O$を中心に角$\alpha$だけ回転させた場合を考える. 点$P$が点$P'$に移ったとしてそれぞれの位置ベクトルを$\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}, \quad \mathbf{x'} = \begin{pmatrix} x' \\ y' \end{pmatrix}$とする.
 
-![figure8](./assets/1-3-1.drawio.svg)
+![figure8](./ch1-assets/1-3-1.drawio.svg)
 
 この時$x', y'$は三角関数の加法定理より以下のように表される.
 
@@ -637,7 +637,7 @@ $$
 \mathbf{x''} = B(A\mathbf{x}) = (BA)\mathbf{x}.
 $$
 
-![figure9](./assets/1-3-2.drawio.svg)
+![figure9](./ch1-assets/1-3-2.drawio.svg)
 
 :::details 例6
 式(13)において, $\mathbf{x}, \mathbf{x'}$をそれぞれ点$P, P'$の位置ベクトルとすれば平面から平面への写像（平面の変換）が引き起こされる.
@@ -787,7 +787,7 @@ $$
 :::details 例9
 $\mathbf{o}$ではないベクトル$\mathbf{a}$がある. 任意のベクトル$\mathbf{x}$に対して$\mathbf{a}$に平行なベクトル$\mathbf{x'}$で$\mathbf{x}-\mathbf{x'}$が$\mathbf{a}$と直行するようなものがただ一つ存在する.
 
-![figure10](./assets/1-3-3.drawio.svg)
+![figure10](./ch1-assets/1-3-3.drawio.svg)
 
 $\mathbf{x}$に$\mathbf{x'}$を対応させる変換$T$を$\bold{V}^2$の$\mathbf{a}$への**射影子**と言い, $\mathbf{x'} = T\mathbf{x}$を$\mathbf{x}$の$\mathbf{a}$への**正射影**と言う.
 例1より
@@ -977,7 +977,7 @@ $$
 
 $\mathbf{x}$に$\mathbf{x'}$を対応させるような変換$S$を$\bold{V}^3$の$\mathbf{b, c}$の張る平面への射影子と言い, $\mathbf{x'} = S\mathbf{x}$を$\mathbf{x}$の$\mathbf{b, c}$の張る正射影と言う.
 
-![figure11](./assets/1-3-4.drawio.svg)
+![figure11](./ch1-assets/1-3-4.drawio.svg)
 
 例4より
 
@@ -1126,7 +1126,7 @@ $\bold{V}^3$の二つのベクトル$\mathbf{a, b}$が線型独立である時, 
 - $\mathbf{a} \times \mathbf{b} = -\mathbf{b} \times \mathbf{a}$.
 - $c(\mathbf{a} \times \mathbf{b}) = c\mathbf{a} \times \mathbf{b} = \mathbf{a} \times c\mathbf{b}$.
 
-![figure12](./assets/1-3-5.drawio.svg)
+![figure12](./ch1-assets/1-3-5.drawio.svg)
 
 右手系に関して$\mathbf{a} = \begin{pmatrix} a \\ b \\ c \end{pmatrix}, \quad \mathbf{b} = \begin{pmatrix} a' \\ b' \\ c' \end{pmatrix}$ならば
 
@@ -1216,7 +1216,7 @@ $$
 
 で与えられる.
 
-![figure13](./assets/1-5-1.drawio.svg)
+![figure13](./ch1-assets/1-5-1.drawio.svg)
 
 :::details 証明
 $\mathbf{c}$と$\mathbf{a} \times \mathbf{b}$との交角を$\theta (0 \le \theta \le \pi)$とすれば
@@ -1306,6 +1306,107 @@ $$
 
 が捩れの位置にあるとき, この両方と直行するよう直線がちょうど一本存在することを示し, $(l_1)$と$(l_2)$の最短距離を求める.
 
-![figure14](./assets/1-5-2.drawio.svg)
+![figure14](./ch1-assets/1-5-2.drawio.svg)
+
+点$P, Q$のそれぞれの位置ベクトルを
+
+$$
+\mathbf{p} = \mathbf{x}_1 + t\mathbf{a} \\
+\mathbf{q} = \mathbf{x}_2 + s\mathbf{b}
+$$
+
+とする.
+
+点$P, Q$を結ぶ直線が$(l_1), (l_2)$と直交する条件は
+
+$$
+(\mathbf{q} - \mathbf{p}, \mathbf{a}) = (\mathbf{q} - \mathbf{p}, \mathbf{b}) = 0
+$$
+
+つまり
+
+$$
+\begin{align*}
+  & (\mathbf{q} - \mathbf{p}, \mathbf{a}) = 0 \\
+  & (\mathbf{x}_2 + s\mathbf{b} - \mathbf{x}_1 - t\mathbf{a}, \mathbf{a}) = 0 \\
+  & (\mathbf{x}_2 - \mathbf{x}_1 + s\mathbf{b} - t\mathbf{a}, \mathbf{a}) = 0 \\
+  & (\mathbf{x}_2 - \mathbf{x}_1, \mathbf{a}) + (s\mathbf{b}, \mathbf{a}) - (t\mathbf{a}, \mathbf{a}) = 0 \\
+  & t(\mathbf{a, a}) - s(\mathbf{b, a}) = (\mathbf{x}_2 - \mathbf{x}_1, \mathbf{a}) \\
+  & t(\mathbf{a, a}) - s(\mathbf{a, b}) = (\mathbf{a}, \mathbf{x}_2 - \mathbf{x}_1), \\
+  \\
+  & (\mathbf{q} - \mathbf{p}, \mathbf{b}) = 0 \\
+  & \qquad \wr \\
+  & t(\mathbf{b, a}) - s(\mathbf{b, b}) = (\mathbf{b}, \mathbf{x}_2 - \mathbf{x}_1)
+\end{align*} \\
+\begin{rcases}
+  t(\mathbf{a, a}) - s(\mathbf{a, b}) = (\mathbf{a}, \mathbf{x}_2 - \mathbf{x}_1) \\
+  t(\mathbf{b, a}) - s(\mathbf{b, b}) = (\mathbf{b}, \mathbf{x}_2 - \mathbf{x}_1)
+\end{rcases}
+$$
+
+これを$t, s$に関する連立一次方程式と考える.
+
+$$
+\begin{align*}
+  \begin{vmatrix}
+    (\mathbf{a, a}) & -(\mathbf{a, b}) \\
+    (\mathbf{b, a}) & -(\mathbf{b, b})
+  \end{vmatrix} &=
+  -(\mathbf{a, a})(\mathbf{b, b}) + (\mathbf{b, a})^2 \\
+  &= - \| \mathbf{a} \|^2 \| \mathbf{b} \|^2 + (\mathbf{b, a})^2 \\
+  &= - \{ \| \mathbf{a} \|^2 \| \mathbf{b} \|^2 - (\mathbf{b, a})^2 \} \\
+  &\ne 0
+\end{align*}
+$$
+
+より連立一次方程式は唯一の解$s_0, t_0$を持つ.
+
+$\mathbf{x}_1 + t_0\mathbf{a}, \quad \mathbf{x}_2 + s_0\mathbf{b}$を位置ベクトルとする点$P_0, Q_0$を結ぶ直線は, $(l_1)$とも$(l_2)$とも直交する唯一の解である.
+
+$\overline{P_0Q_0}$は$(l_1)$と$(l_2)$との最短距離を与える. 
+
+![figure15](./ch1-assets/1-5-3.drawio.svg)
+
+$\mathbf{c} = \overrightarrow{P_0Q_0}$とする. $\mathbf{x}_1, \mathbf{x}_2$を位置ベクトルとする点を$P_1, Q_1$とすれば
+
+$$
+\begin{align*}
+  \mathbf{x}_2 - \mathbf{x}_1 = \overrightarrow{P_1Q_1} &= \overrightarrow{P_1P_0} + \overrightarrow{P_0Q_0} + \overrightarrow{Q_0Q_1} \\
+  &= t_0\mathbf{a} + \mathbf{c} - s_0\mathbf{b}
+\end{align*}
+$$
+
+$\mathbf{c}$は$\mathbf{a}$とも$\mathbf{b}$とも直交するから
+
+$$
+(\mathbf{c}, \mathbf{x}_2 - \mathbf{x}_1) = (\mathbf{c, c}) + t_0(\mathbf{c, a}) - s_0(\mathbf{c, b}) = (\mathbf{c, c}), \\
+\mathbf{c} = k(\mathbf{a} \times \mathbf{b}) \quad k \ne 0
+$$
+
+ゆえに
+
+$$
+\| \mathbf{c} \| =
+\frac{| (\mathbf{c, c}) |}{\| \mathbf{c} \|} =
+\frac{| (\mathbf{c}, \mathbf{x}_2 - \mathbf{x}_1) |}{| k | \| \mathbf{a} \times \mathbf{b} \|} =
+\frac{| (k(\mathbf{a} \times \mathbf{b}), \mathbf{x}_2 - \mathbf{x}_1) |}{| k | \| \mathbf{a} \times \mathbf{b} \|} =
+\frac{| k | | (\mathbf{a} \times \mathbf{b}, \mathbf{x}_2 - \mathbf{x}_1) |}{| k | \| \mathbf{a} \times \mathbf{b} \|} =
+\frac{| (\mathbf{a} \times \mathbf{b}, \mathbf{x}_2 - \mathbf{x}_1) |}{\| \mathbf{a} \times \mathbf{b} \|} \\
+= \frac{| \det(\mathbf{a}, \mathbf{b}, \mathbf{x}_2 - \mathbf{x}_1) |}{\| \mathbf{a} \times \mathbf{b} \|}
+$$
+
+これが$(l_1)$と$(l_2)$との最短距離となる.
+
+また, $(l_1)$と$(l_2)$が捩れの位置にあるための条件は
+
+$$
+\det(\mathbf{a}, \mathbf{b}, \mathbf{x}_2 - \mathbf{x}_1) \ne 0
+$$
+
+となる.
+
+```memo:txt
+\det(\mathbf{a}, \mathbf{b}, \mathbf{x}_2 - \mathbf{x}_1) = 0の場合, 距離$\| \mathbf{c} \|$が0になるので交わるし, 線型独立ではなくなるので平行にもなる
+```
 
 :::
