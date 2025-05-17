@@ -290,3 +290,195 @@ $$
 - $^{t}(AB) = ^{t}B ^{t}A$.
 
 ### 行列の積 $\to$ 小さい行列の積
+つまり, 行列の積を型が小さい行列の積に帰着させる.
+
+#### 区分け
+
+$$
+A =
+\begin{pmatrix}
+  1 & 2 & -1 & 0 \\
+  2 & 1 & 3 & 2 \\
+  1 & 2 & 3 & 4
+\end{pmatrix}
+$$
+
+を例にとる.
+
+行列$A$を横線と縦線とで四つの区画に分ける.
+
+$$
+A =
+\left(
+\begin{array}{ccc:c}
+  1 & 2 & -1 & 0 \\
+  2 & 1 & 3 & 2 \\
+  \hdashline
+  1 & 2 & 3 & 4
+\end{array}
+\right)
+$$
+
+分けたそれぞれの区画は一つの行列とみなすことができる.
+
+$$
+A_{11} =
+\begin{pmatrix}
+  1 & 2 & -1 \\
+  2 & 1 & 3
+\end{pmatrix}, \quad
+A_{12} =
+\begin{pmatrix}
+  0 \\ 2
+\end{pmatrix}, \quad
+A_{21} =
+\begin{pmatrix}
+  1 & 2 & 3
+\end{pmatrix}, \quad
+A_{22} =
+\begin{pmatrix}
+  4
+\end{pmatrix}
+$$
+
+と置いて
+
+$$
+A =
+\begin{pmatrix}
+  A_{11} & A_{12} \\
+  A_{21} & A_{22}
+\end{pmatrix}
+$$
+
+一般に$(l, m)$型行列$A = (a_{ij})$を$p-1$個の横線と$q-1$個の縦線とによって$pq$個の区画に分ける. 上から$s$番目, 左から$l$番目の区画の行列を$A_{st}$とする時,
+
+$$
+\begin{equation}
+  A =
+  \begin{pmatrix}
+    A_{11} & A_{12} & \cdots & A_{1t} & \cdots & A_{1q} \\
+    A_{21} & A_{22} & \cdots & A_{2t} & \cdots & A_{2q} \\
+    \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+    A_{s1} & A_{s2} & \cdots & A_{st} & \cdots & A_{sq} \\
+    \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+    A_{p1} & A_{p2} & \cdots & A_{pt} & \cdots & A_{pq} \\
+  \end{pmatrix}
+\end{equation}
+$$
+
+と書く.
+
+これを行列の**区分け**という.
+
+この区分けが行列の積にどう活きてくるのか.  
+&darr;  
+区分けされた行列同士の積が通常の行列の積と同じように実行できる.  
+&darr;  
+区分け(1)において, $A_{st}$が$(l_s, m_t)$型行列であるとする.
+
+$$
+l = l_1 + l_2 + \cdots + l_p, \\
+m = m_1 + m_2 + \cdots + m_q
+$$
+
+である.
+
+ここで$(m, n)$型行列$B = (b_{ij})$を
+
+$$
+B = 
+\begin{pmatrix}
+  B_{11} & B_{12} & \cdots & B_{1r} \\
+  B_{21} & B_{22} & \cdots & B_{2r} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  B_{q1} & B_{q2} & \cdots & B_{qr}
+\end{pmatrix}
+$$
+
+のように$qr$個の区画にわけ, $B_{tu}(t=1, 2, \cdots, q, \quad u=1, 2, \cdots, r)$は$(m_t, n_u)$型行列とする.
+
+$$
+m = m_1 + m_2 + \cdots + m_q ,\\
+n = n_1 + n_2 + \cdots + n_r
+$$
+
+ここで$A$と$B$での$m$の分割が同じである必要がある.
+
+積$C = AB$を$pr$個の区画に分ける.
+
+$$
+C =
+\begin{pmatrix}
+  C_{11} & C_{12} & \cdots & C_{1r} \\
+  C_{21} & C_{22} & \cdots & C_{2r} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  C_{p1} & C_{p2} & \cdots & C_{pr} \\
+\end{pmatrix}
+$$
+
+ここで, $C_{su}$は$(l_s, n_u)$型行列であるとする.
+
+この時
+
+$$
+\begin{equation}
+  C_{su} = A_{s1}B_{1u} + A_{s2}B_{2u} + \cdots + A_{sq}B_{qu} \qquad (s = 1, 2, \cdots, p \quad t = 1, 2, \cdots, r)
+\end{equation}
+$$
+
+が成り立つという話.
+
+:::details 証明っぽいもの
+最初に, (2)の右辺が意味を持つことを確認する. 実際, $A_{st}$は$(l_s, m_t)$型行列で$B_{tu}$は$(m_t, n_u)$型行列である. よって$A_{st}B_{tu}$は定義できて, $t$の如何に拘らず$(l_s, n_u)$型行列となる. したがって, それらの和は（つまり(2)の右辺）は意味を持ち, 左辺$C_{su}$と同じく$(l_s, t_u)$型行列となる.
+
+次に, (2)の両辺に対応する成分が等しいことを確認する. その成分を$(v, w)$成分とする.
+
+$$
+i = l_1 + l_2 + \cdots + l_{s-1} + v, \\
+k = n_1 + n_2 + \cdots + n_{u-1} + w
+$$
+
+と置く.
+
+$C_{su}$の$(v, w)$成分 = $C$の$(i, k)$成分 = $\sum_{j=1}^{m} a_{ij}b_{jk}$
+
+一方
+
+$A_{st}B_{tu}$の$(v, w)$成分 $= \sum_{j = m_1 + m_2 + \cdots + m_{t-1} + 1}^{m_1 + m_2 + \cdots + m_t} a_{ij}b_{jk}$
+
+であるから
+
+$\sum_{t=1}^{q}A_{st}B_{tu}$の$(v, w)$成分 $= \sum_{t=1}^{q}\sum_{j = m_1 + m_2 + \cdots + m_{t-1} + 1}^{m_1 + m_2 + \cdots + m_t} a_{ij}b_{jk} = \sum_{j=1}^{m}a_{ij}b_{jk}$
+
+証明終
+
+:::
+
+:::details 例1
+$p = q = r = 2$の時
+
+$$
+\begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix}
+\begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B_{22} \end{pmatrix}
+= \begin{pmatrix} A_{11}B_{11} + A_{12}B_{21} & A_{11}B_{12} + A_{12}B_{22} \\ A_{21}B_{11} + A_{22}B_{21} & A_{21}B_{12} + A_{22}B_{22} \end{pmatrix}.
+$$
+
+$A_{21}, B_{21}$が零行列ならば
+
+
+$$
+\begin{pmatrix} A_{11} & A_{12} \\ \mathcal{O} & A_{22} \end{pmatrix}
+\begin{pmatrix} B_{11} & B_{12} \\ \mathcal{O} & B_{22} \end{pmatrix}
+= \begin{pmatrix} A_{11}B_{11} & A_{11}B_{12} + A_{12}B_{22} \\ \mathcal{O} & A_{22}B_{22} \end{pmatrix}.
+$$
+
+さらに$A_{12}, B_{12}$も零行列ならば
+
+$$
+\begin{pmatrix} A_{11} & \mathcal{O} \\ \mathcal{O} & A_{22} \end{pmatrix}
+\begin{pmatrix} B_{11} & \mathcal{O} \\ \mathcal{O} & B_{22} \end{pmatrix}
+= \begin{pmatrix} A_{11}B_{11} & \mathcal{O} \\ \mathcal{O} & A_{22}B_{22} \end{pmatrix}.
+$$
+
+:::
